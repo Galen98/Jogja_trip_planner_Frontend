@@ -1,8 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 
 body {
-background-color: lightgray !important;
-    font-family: 'Quicksand', sans-serif;
+    background-color:white;
+    font-family: "Inter";    
 }
+
+.buttons{
+    border-radius: 40px;
+}
+
+.logos{
+    border-radius: 20px;
+}
+
+.myfooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-content: center;
+    font-size: small;
+  }
 
 

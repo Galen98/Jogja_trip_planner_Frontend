@@ -17,11 +17,15 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
+      <div className='myfooter'>
+  <p>2023&#169; Jogja itinerary planner</p>
+</div>
     </div>
+    
   );
 }
 

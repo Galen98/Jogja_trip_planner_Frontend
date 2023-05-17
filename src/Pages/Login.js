@@ -1,15 +1,112 @@
-import React from 'react';
+//import hook react
+import React, { useState, useEffect } from 'react';
+
+//import hook useHitory from react router dom
+import { useHistory } from 'react-router';
+
+//import axios
+import axios from 'axios';
 
 function Login() {
 
+    //define state
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    //define state validation
+    const [validation, setValidation] = useState([]);
+
+    //define history
+    const history = useHistory();
+
+    //hook useEffect
+    useEffect(() => {
+
+        //check token
+        if(localStorage.getItem('token')) {
+
+            //redirect page dashboard
+            history.push('/dashboard');
+        }
+    }, []);
+
+    //function "loginHanlder"
+    const loginHandler = async (e) => {
+        e.preventDefault();
+        
+        //initialize formData
+        const formData = new FormData();
+
+        //append data to formData
+        formData.append('email', email);
+        formData.append('password', password);
+
+        //send data to server
+        await axios.post('http://localhost:8000/api/login', formData)
+        .then((response) => {
+
+            //set token on localStorage
+            localStorage.setItem('token', response.data.token);
+
+            //redirect to dashboard
+            history.push('/dashboard');
+        })
+        .catch((error) => {
+
+            //assign error to state "validation"
+            setValidation(error.response.data);
+        })
+    };
     return (
         <div className="container" style={{ marginTop: "120px" }}>
             <div className="row justify-content-center">
                 <div className="col-md-4">
                     <div className="card border-0 rounded shadow-sm">
                         <div className="card-body">
-                            HALAMAN LOGIN
-                            <a href="/register" style={{ marginLeft: "120px" }}>Register</a>
+                        <center> <img className='logos' src='./logonew.png' alt="Logo" /></center>
+                            <h5 className="fw-bold text-center">Welcome-Back.</h5>
+                            <br/>
+                            {
+                                validation.message && (
+                                    <div className="alert alert-danger">
+                                        {validation.message}
+                                    </div>
+                                )
+                            }
+                            <form onSubmit={loginHandler}>
+                                <div className="mb-3">
+                                    <label className="form-label">Email</label>
+                                    <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email"/>
+                                </div>
+                                {
+                                    validation.email && (
+                                        <div className="alert alert-danger">
+                                            {validation.email[0]}
+                                        </div>
+                                    )
+                                }
+                                <div className="mb-3">
+                                    <label className="form-label">Password</label>
+                                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Your Password"/>
+                                </div>
+                                {
+                                    validation.password && (
+                                        <div className="alert alert-danger">
+                                            {validation.password[0]}
+                                        </div>
+                                    )
+                                }
+                                <div className="mb-3 text-center">
+                                    <p>Don't have Account? <a href='/register'>create one</a> </p>
+                                </div>
+                                <div className="mb-3 text-center">
+                                    <p>Forget password? <a href='/register'>click here</a> </p>
+                                </div>
+                                <div className="d-grid gap-2">
+                                    <button type="submit" className="buttons btn btn-primary">Login</button>
+                                </div>
+                                
+                            </form>
                         </div>
                     </div>
                 </div>
