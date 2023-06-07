@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 
 //import hook useHitory from react router dom
 import { useHistory } from 'react-router';
-
+import Footer from '../Component/Footer';
+import Nav from '../Component/Nav';
 //import axios
 import axios from 'axios';
 
@@ -11,6 +12,7 @@ function Register() {
 
     //define state
     const [name, setName] = useState("");
+    const [hometown, setHometown] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -30,6 +32,7 @@ function Register() {
 
         //append data to formData
         formData.append('name', name);
+        formData.append('hometown', hometown);
         formData.append('email', email);
         formData.append('password', password);
         formData.append('password_confirmation', passwordConfirmation);
@@ -42,21 +45,21 @@ function Register() {
             history.push('/login');
         })
         .catch((error) => {
-
             //assign error to state "validation"
             setValidation(error.response.data);
         })
     };
 
     return (
-        
-        <div className="container " style={{ marginTop: "120px" }}>
+        <>
+        <Nav/>
+        <div className="container " style={{ marginTop: "35px" }}>
             <div className="row justify-content-center">
-                <div className="col-md-8" >
-                    <div className="card border-0 rounded shadow-lg">
-                        <div className="card-body">
-                        <center> <img className='logos' src='./logonew.png' alt="Logo" /></center>
-                            <h5 className="fw-bold text-center">Register Your Account</h5>
+                <div className="col-md-8 " >
+                    <div className="card border-0 rounded shadow-sm">
+                        <div className="card-body border border-light ">
+                        <center> <img className='logos' src='./logonews.png' alt="Logo" /></center>
+                        <strong><h5 className="fw-bold text-center">Create Your Account</h5></strong>
                             <br />
                             <form onSubmit={registerHandler}>
                                 <div className="row">
@@ -86,6 +89,7 @@ function Register() {
                                             )
                                         }
                                     </div>
+                                    
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6">
@@ -107,15 +111,32 @@ function Register() {
                                             <input type="password" className="form-control" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} placeholder="Password Confirmation"/>
                                         </div>
                                     </div>
+                                    <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label className="form-label">Hometown</label>
+                                            <input type="text" className="form-control" value={hometown} onChange={(e) => setHometown(e.target.value)} placeholder="Your Hometown"/>
+                                        </div>
+                                        {
+                                            validation.email && (
+                                                <div className="alert alert-danger">
+                                                    {validation.hometown[0]}
+                                                </div>
+                                            )
+                                        }
+                                    </div>
                                 </div>
-                                <button type="submit" className="btn buttons btn-primary">Register</button>
+                                <br/>
+                                <div className="d-grid gap-2">
+                                <center>  <button type="submit" className="button is-success">Sign up</button></center>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <Footer />
+        </>
     )
 
 }

@@ -6,7 +6,8 @@ import { useHistory } from 'react-router';
 
 //import axios
 import axios from 'axios';
-
+import Footer from '../Component/Footer';
+import Nav from '../Component/Nav';
 function Login() {
 
     //define state
@@ -26,7 +27,7 @@ function Login() {
         if(localStorage.getItem('token')) {
 
             //redirect page dashboard
-            history.push('/dashboard');
+            history.push('/');
         }
     }, []);
 
@@ -49,7 +50,7 @@ function Login() {
             localStorage.setItem('token', response.data.token);
 
             //redirect to dashboard
-            history.push('/dashboard');
+            history.push('/');
         })
         .catch((error) => {
 
@@ -58,12 +59,14 @@ function Login() {
         })
     };
     return (
-        <div className="container" style={{ marginTop: "120px" }}>
+        <>
+        <Nav/>
+        <div className="container" style={{ marginTop: "50px" }}>
             <div className="row justify-content-center">
                 <div className="col-md-4">
-                    <div className="card border-0 rounded shadow-sm">
-                        <div className="card-body">
-                        <center> <img className='logos' src='./logonew.png' alt="Logo" /></center>
+                    <div className="card border-0 rounded-6 shadow-sm">
+                        <div className="card-body ">
+                        <center> <img className='logos' src='./logonews.png' alt="Logo" /></center>
                             <h5 className="fw-bold text-center">Welcome-Back.</h5>
                             <br/>
                             {
@@ -96,14 +99,14 @@ function Login() {
                                         </div>
                                     )
                                 }
-                                <div className="mb-3 text-center">
+                                <div className="text-center">
                                     <p>Don't have Account? <a href='/register'>create one</a> </p>
                                 </div>
                                 <div className="mb-3 text-center">
                                     <p>Forget password? <a href='/register'>click here</a> </p>
                                 </div>
-                                <div className="d-grid gap-2">
-                                    <button type="submit" className="buttons btn btn-primary">Login</button>
+                                <div className="d-grid gap-2 text-center">
+                                 <center>  <button type="submit" className="button is-success">Sign in</button></center>
                                 </div>
                                 
                             </form>
@@ -112,6 +115,8 @@ function Login() {
                 </div>
             </div>
         </div>
+        <Footer/>
+        </>
     )
 
 }

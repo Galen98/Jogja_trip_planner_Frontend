@@ -1,27 +1,62 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
 body {
     background-color:white;
-    font-family: "Inter";    
+    font-family: "Plus Jakarta Sans",sans-serif;
 }
 
 .buttons{
     border-radius: 40px;
+    text-align: center;
+}
+
+.bolds{
+    font-weight: bold;
+}
+
+.fontprofile{
+    font-size: 15px;
 }
 
 .logos{
-    border-radius: 20px;
+    border-radius: 500px;
+    height: 100px;
 }
 
-.myfooter {
+.navlogo {
+    background: url(../public/logonews.png) center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px
+  }
+
+.hero{
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://jogjapost.com/wp-content/uploads/2018/02/Nglambor-Beach.jpg) center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.herosearch{
+    margin-top: -50px;
+}
+.footerx {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
-    align-content: center;
+    font-size: smaller;
+  }
+  .headerprofile{
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 1000px 400px;
+
+  }
+
+  .fontisi{
     font-size: small;
   }
 

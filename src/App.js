@@ -12,18 +12,25 @@ import Login from './Pages/Login';
 
 //import component Register
 import Dashboard from './Pages/Dashboard';
+import Formprofile from './Pages/Formprofile';
 
+import Profile from './Pages/Profile';
 function App() {
   return (
     <div>
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+     
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile/edit/:id" component={Formprofile} />
+
       </Switch>
-      <div className='myfooter'>
-  <p>2023&#169; Jogja itinerary planner</p>
-</div>
+      
+  
+      
+
     </div>
     
   );
