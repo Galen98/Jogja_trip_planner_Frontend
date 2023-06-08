@@ -62,7 +62,7 @@ useEffect(() => {
         <style scoped>
             @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
             </style>
-            <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+            <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item ml-4" href="/">
       <img src="./logonews.png"/>
@@ -105,8 +105,8 @@ useEffect(() => {
 </Dropdown>
         ) : (
         <div class="buttons">
-          <a href='/login' class="button is-light">
-            Log in
+          <a href='/login' class="button is-light is-rounded">
+          <i class="fa fa-user mr-3"></i>  Log in
           </a>
         </div>
         )}
@@ -115,14 +115,14 @@ useEffect(() => {
   </div>
 </nav>
 
-<section className="hero is-medium">
+<section className="hero heros is-medium mt-6">
   <div className="hero-body">
-    <p className="title has-text-white is-size-1 has-text-centered">
-    The new way to plan your trip in Jogja
+    <p className="title has-text-white is-size-2 has-text-centered">
+    Cara baru untuk merencanakan wisata anda di Jogja
     </p>
     
     <p className="subtitle has-text-white has-text-centered">
-    Create a fully customized day-by-day itinerary for free
+    Lebih dari 100 tempat wisata Jogja akan direkomendasikan untuk anda
     </p>
     <br/>
     <p className="subtitle has-text-white has-text-centered">

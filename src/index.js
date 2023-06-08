@@ -7,7 +7,7 @@ import Content from './Content';
 //import bootstrap CSS
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import 'react-bulma-dropdown/dist/main.css';
 import Alert from 'react-bootstrap/Alert';
 
 //import custom CSS

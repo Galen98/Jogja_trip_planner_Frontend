@@ -104,8 +104,8 @@ useEffect(() => {
 </Dropdown>
         ) : (
         <div class="buttons">
-          <a href='/login' class="button is-light">
-            Log in
+        <a href='/login' class="button is-light is-rounded">
+          <i class="fa fa-user mr-3"></i>  Log in
           </a>
         </div>
         )}
