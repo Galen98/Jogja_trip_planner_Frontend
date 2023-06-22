@@ -37,7 +37,6 @@ function Dashboard() {
 
         //check token empty
         if(!token) {
-
             //redirect login page
             history.push('/login');
         }

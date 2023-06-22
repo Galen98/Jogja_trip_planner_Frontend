@@ -36,6 +36,7 @@ body {
     background-repeat: no-repeat;
 }
 
+
 .herosfooter{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://wallpaperaccess.com/full/2043912.jpg) center center;
     background-size: cover;
@@ -70,7 +71,7 @@ body {
     max-height: 330px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-}
+    }
 
 .cover-image img {
     transition: transform 1s, filter 2s ease-in-out;

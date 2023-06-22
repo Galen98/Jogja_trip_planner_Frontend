@@ -7,7 +7,7 @@ import { useHistory } from 'react-router';
 //import axios
 import axios from 'axios';
 import Footer from '../Component/Footer';
-
+import Swal from 'sweetalert2'
 import Nav from '../Component/Nav';
 function Login() {
 
@@ -46,7 +46,11 @@ function Login() {
         //send data to server
         await axios.post('http://localhost:8000/api/login', formData)
         .then((response) => {
-
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: 'Berhasil login!',
+              })
             //set token on localStorage
             localStorage.setItem('token', response.data.token);
 
@@ -80,7 +84,7 @@ function Login() {
                             <form onSubmit={loginHandler}>
                                 <div className="mb-3">
                                     <label className="form-label">Email</label>
-                                    <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email"/>
+                                    <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukan email anda"/>
                                 </div>
                                 {
                                     validation.email && (
@@ -91,7 +95,7 @@ function Login() {
                                 }
                                 <div className="mb-3">
                                     <label className="form-label">Password</label>
-                                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Your Password"/>
+                                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Masukan password anda"/>
                                 </div>
                                 {
                                     validation.password && (
@@ -101,13 +105,13 @@ function Login() {
                                     )
                                 }
                                 <div className="text-center">
-                                    <p>Don't have Account? <a href='/register'>create one</a> </p>
+                                    <p>Belum punya akun? <a href='/register'>buat</a> </p>
                                 </div>
                                 <div className="mb-3 text-center">
-                                    <p>Forget password? <a href='/register'>click here</a> </p>
+                                    <p>Lupa password? <a href='/register'>klik disini</a> </p>
                                 </div>
                                 <div className="d-grid gap-2 text-center">
-                                 <center>  <button type="submit" className="button is-success">Sign in</button></center>
+                                 <center>  <button type="submit" className="button is-success">Masuk</button></center>
                                 </div>
                                 
                             </form>

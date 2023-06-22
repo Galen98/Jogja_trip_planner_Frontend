@@ -9,11 +9,9 @@ import Register from './Pages/Register';
 
 //import component Login
 import Login from './Pages/Login';
-
 //import component Register
 import Dashboard from './Pages/Dashboard';
 import Formprofile from './Pages/Formprofile';
-
 import Profile from './Pages/Profile';
 function App() {
   return (

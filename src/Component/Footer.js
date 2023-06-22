@@ -10,7 +10,7 @@ class Footer extends Component {
     return (
       <>
       <div>
-        <div style={{marginTop:"100px"}}></div> <div className='footerx shadow-md'> <p>&copy; Copyright 2023 Jogja itinerary planner</p> </div>
+        <div style={{marginTop:"100px"}}></div> <div className='footerx shadow-md'> <p>&copy; Copyright 2023 Jogja Travel Recommendation</p> </div>
       </div>
       </>
     );

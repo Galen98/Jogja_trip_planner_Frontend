@@ -51,13 +51,11 @@ useEffect(() => {
   fetchData();
 }, []);
 
-
+const isRekomen = user.id
     
     return (
         <>
-    
         <div>
-        
         <style scoped>
             @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
             </style>
@@ -84,18 +82,30 @@ useEffect(() => {
   </div>
 
   <div id="navbarBasicExample" className={`has-background-black navbar-menu ${isActive ? "is-active" : ""}`}>
+  {isRekomen ? (
     <div class="navbar-start">
+    
       <a class="navbar-item has-text-white">
         Home
       </a>
-
       <a class="navbar-item has-text-white">
         Artikel
       </a>
+      <a class="navbar-item has-text-white">
+        Wisata
+      </a>
+      <a class="navbar-item has-text-white">
+        About
+      </a>
+      
+      
     </div>
+    ) : (
+      <p></p>
+    )}
 
     <div class="navbar-end">
-      <div class="navbar-item">
+      <div class="navbar-item is-capitalized">
       {token ? (
         <Dropdown trigger={user.name}>
   <a href="/profile" className="dropdown-item">Profile</a>
@@ -106,6 +116,9 @@ useEffect(() => {
         <div class="buttons">
         <a href='/login' class="button is-light is-rounded">
           <i class="fa fa-user mr-3"></i>  Log in
+          </a>
+          <a href='/register' class="button is-link is-rounded">
+           Registrasi
           </a>
         </div>
         )}

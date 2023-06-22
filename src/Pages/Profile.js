@@ -54,8 +54,10 @@ function Profile() {
     }, []);
     const isHome = user.hometown
     const isImage = user.image
+    const isGrup = user.grup
+    const isBackpacker = user.backpacker
+    const isFamily = user.family
     const url ="localhost:8000/storage/img/"
-
 return(
     <>
     <Nav/>
@@ -72,27 +74,20 @@ return(
 ) : (
     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" className='img-fluid img-thumbnail mt-4 mb-2' style={{width:"150px", zIndex:"1", borderRadius: "100px"}}/>
 )}
-
-
 <br/>
 
 
-
-{/* <button type='button' className='btn btn-outline-dark' data-mdb-ripple-color="dark" style={{zIndex:"1"}}>Edit Profile</button> */}
-
 </div>
-
 <div className='ms-3' style={{marginTop:"50px"}}>
 <a href={`/profile/edit/${user.id}`} className='button is-rounded mb-3' data-mdb-ripple-color="dark" style={{zIndex:"1"}}>Edit Profile</a>
-<p className='lead fw-normal mb-1 fontprofile ml-2'>{user.name}</p>
+<p className='lead fw-normal mb-1 fontprofile ml-2 is-capitalized'>{user.name}</p>
 {isHome ? (
-<p className='lead fw-normal mb-2 ml-2 fontprofile'>{user.hometown}</p>
+<p className='lead fw-normal mb-2 ml-2 fontprofile is-capitalized'>{user.hometown}</p>
 ) : (
     <p className='lead fw-normal ml-2 mb-2 fontprofile'>(Isi asal kotamu)</p>
 )}
 
-            </div>
-            
+</div>            
 </div>
 </div>
 <div className='p-4 text-black bg-light' style={{height:"100px"}}>
@@ -103,9 +98,23 @@ return(
 <br/>
 <h4 className='lead fw-bold mb-1' style={{fontWeight:"bold",marginTop:"-55px"}}>Tentang saya</h4>
 <br/>
-{/* <p className='lead fw-normal mb-1'>Nama: {user.name}</p>
-<p className='lead fw-normal mb-1'>Asal Kota: {user.name}</p>
-<br/> */}
+<p className='lead fw-normal mb-1 fontprofile'>Siapakah anda sebagai wisatawan?</p>
+{isGrup == 1 ? (
+    <input className='form-control fontisi' value="Grup travellers" readOnly />
+) : (
+    <p></p>
+)}
+{isBackpacker == 1 ? (
+    <input className='form-control fontisi' value="Backpacker travellers" readOnly />
+) : (
+    <p></p>
+)}
+{isFamily == 1 ? (
+    <input className='form-control fontisi' value="Family travellers" readOnly />
+) : (
+    <p></p>
+)}
+<br/>
 <p className='lead fw-normal mb-1 fontprofile'>Motivasi</p>
 <textarea className='form-control fontisi' style={{height:"100px"}} value={user.motivation} readOnly></textarea>
 <br/>
@@ -113,14 +122,14 @@ return(
 <input className='form-control fontisi' value={user.job} readOnly />
 </div>
 <div className="d-flex justify-content-between align-items-center mb-4">
-<h4 className='lead fw-bold mb-1' style={{fontWeight:"bold"}}>History Itinerary</h4>
+<h4 className='lead fw-bold mb-1' style={{fontWeight:"bold"}}>History rekomendasi wisata</h4>
             </div>
-            <div className="row g-2">
+            {/* <div className="row g-2">
               <div className="bg-image col mb-2">
                 <img src="https://images.unsplash.com/photo-1629605924917-d2de56a40951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                    className="w-100 rounded-3 mb-2" />
-                        <p className='lead fw-normal mb-1 fontprofile'>Yogyakarta planning</p>
-                        <p className="mb-4">20/06/2023</p>
+                <p className='lead fw-normal mb-1 fontprofile'>Yogyakarta planning</p>
+                <p className="mb-4">20/06/2023</p>
               </div>
 
               
@@ -130,7 +139,7 @@ return(
                    <p className='lead fw-normal mb-1 fontprofile'>Sunrise in Yogyakarta</p>
                    <p className="mb-4">26/06/2023</p>
               </div>
-            </div>
+            </div> */}
             
 </div>
 </div>

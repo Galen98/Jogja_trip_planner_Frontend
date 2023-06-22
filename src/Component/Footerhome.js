@@ -12,16 +12,16 @@ class Footerhome extends Component {
       <footer className="footer has-text-white" style={{backgroundColor:"black"}}>
         
       <div className="content has-text-centered">
-        <p>Copyright © Jogja itinerary planner</p>
+        <p>Copyright © Jogja Travel Recommendation</p>
       </div>
  <br/>
   <div className="columns">
-    <div className="column is-one-third">
+    <div className="column is-one-half">
       <h4 className="bd-footer-title 
                  has-text-weight-medium
                  has-text-centered">
         <img src="./logonews.png" style={{width:"100px"}}/>
-        <p className='mt-4 has-text-weight-semibold is-size-4'>Jogja Itinerary Planner</p>
+        <p className='mt-4 has-text-weight-semibold is-size-4'>Jogja Travel Recommendation</p>
         <p className='has-text-weight-light mt-4'>By Jogja Borobudur Tour & Travel</p>
         <br/>
         <span class="icon-text">
@@ -51,39 +51,33 @@ class Footerhome extends Component {
       <h4 class="bd-footer-title 
                  has-text-weight-medium 
                  has-text-justify">
-        Explore
+        Support
       </h4>
   
       <br/>
       <p class="bd-footer-link">
          <a href="https://">
           <span class="icon-text">
-            <span>Buat itinerary</span>
+            <span>Kebijakan privasi</span>
           </span>
          </a>
           <br />
           <br/>
           <a href="https://">
               <span class="icon-text">
-                <span>Artikel</span>
+                <span>Syarat dan ketentuan</span>
               </span>
             </a>
           <br />
           <br/>
           <a href="https://">
               <span class="icon-text">
-                <span>Daftar kategori wisata</span>
+                <span>Inspirasi perjalanan</span>
               </span>
           </a>
           <br />
           <br/>
-          <a href="https://">
-              <span class="icon-text">
-                <span>Itinerary dari wisatawan lain</span>
-              </span>
-          </a>
       </p>
-  
     </div>
   
     
