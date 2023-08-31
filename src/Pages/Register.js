@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 //import hook useHitory from react router dom
 import { useHistory } from 'react-router';
-import Footer from '../Component/Footer';
-import Nav from '../Component/Nav';
+import Footerfix from '../Component/Footerfix';
+import Navfix from '../Component/Navfix';
 //import axios
 import axios from 'axios';
 import Swal from 'sweetalert2'
@@ -59,8 +59,8 @@ function Register() {
 
     return (
         <>
-        <Nav/>
-        <div className="container " style={{ marginTop: "35px" }}>
+        <Navfix/>
+        <div className="container " style={{ marginTop: "100px" }}>
             <div className="row justify-content-center">
                 <div className="col-md-8 " >
                     <div className="card border-0 rounded shadow-sm">
@@ -136,6 +136,7 @@ function Register() {
                                         <div className="mb-3">
                                             <label className="form-label">Siapakah anda?</label>
                                             <select className="form-select" aria-label="Default select example" value={tipe} onChange={(e) => setTipe(e.target.value)}>
+                                            <option>Pilih Tipe Wisatawan</option>
                                             <option value="backpacker">Wisatawan backpacker</option>
                                             <option value="grup">Grup wisata</option>
                                             <option value="family">Wisatawan keluarga</option>
@@ -152,7 +153,7 @@ function Register() {
                                 </div>
                                 <br/>
                                 <div className="d-grid gap-2">
-                                <center>  <button type="submit" className="button is-success">Daftar</button></center>
+                                <center>  <button type="submit" className="btn btn-success rounded-7 text-capitalize">Daftar</button></center>
                                 </div>
                             </form>
                         </div>
@@ -160,7 +161,7 @@ function Register() {
                 </div>
             </div>
         </div>
-        <Footer />
+        <Footerfix />
         </>
     )
 

@@ -6,14 +6,15 @@ import { useHistory } from 'react-router';
 
 //import axios
 import axios from 'axios';
-import Footer from '../Component/Footer';
+import Footerfix from '../Component/Footerfix';
 import Swal from 'sweetalert2'
-import Nav from '../Component/Nav';
+import Navfix from '../Component/Navfix';
 function Login() {
 
     //define state
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const Tokens = localStorage.getItem("token");
 
     //define state validation
     const [validation, setValidation] = useState([]);
@@ -35,38 +36,52 @@ function Login() {
     //function "loginHanlder"
     const loginHandler = async (e) => {
         e.preventDefault();
-        
         //initialize formData
         const formData = new FormData();
-
         //append data to formData
         formData.append('email', email);
         formData.append('password', password);
+      
 
-        //send data to server
-        await axios.post('http://localhost:8000/api/login', formData)
-        .then((response) => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil',
-                text: 'Berhasil login!',
-              })
-            //set token on localStorage
-            localStorage.setItem('token', response.data.token);
+        try {
+          const response = await axios.post('http://localhost:8000/api/login', formData);
+          
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: 'Berhasil login!',
+            confirmButtonColor: '#1071ec',
+            confirmButtonText: 'Yes',
+          });
 
-            //redirect to dashboard
-            history.push('/');
-        })
-        .catch((error) => {
-
-            //assign error to state "validation"
-            setValidation(error.response.data);
-        })
-    };
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('userData', JSON.stringify(response.data.user));
+          
+          try {
+            const likedAttractionsResponse = await axios.get('http://localhost:8000/api/user/likes', {
+              headers: {
+                Authorization: `Bearer ${response.data.token}`
+              }
+            });
+      
+            const likedAttractionIds = likedAttractionsResponse.data;
+            likedAttractionIds.forEach(attractionId => {
+              localStorage.setItem(`attraction_${attractionId}_liked`, 'true');
+            });
+          } catch (error) {
+            console.error('Error fetching liked attractions after login:', error);
+          }
+      
+          history.push('/');
+        } catch (error) {
+          setValidation(error.response.data);
+        }
+      };
+      
     return (
         <>
-        <Nav/>
-        <div className="container" style={{ marginTop: "50px" }}>
+        <Navfix/>
+        <div className="container" style={{ marginTop: "100px" }}>
             <div className="row justify-content-center">
                 <div className="col-md-4">
                     <div className="card border-0 rounded-6 shadow-sm">
@@ -111,7 +126,7 @@ function Login() {
                                     <p>Lupa password? <a href='/register'>klik disini</a> </p>
                                 </div>
                                 <div className="d-grid gap-2 text-center">
-                                 <center>  <button type="submit" className="button is-success">Masuk</button></center>
+                                 <center>  <button type="submit" className="btn btn-success rounded-7 text-capitalize">Masuk</button></center>
                                 </div>
                                 
                             </form>
@@ -120,7 +135,7 @@ function Login() {
                 </div>
             </div>
         </div>
-        <Footer/>
+        <Footerfix/>
         </>
     )
 

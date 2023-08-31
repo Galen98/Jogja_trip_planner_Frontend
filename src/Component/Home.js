@@ -1,0 +1,92 @@
+import React, { useState, Component, useEffect  } from 'react';
+import Regisinfo from './Regisinfo';
+//import hook useHitory from react router dom
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom'
+import logo from './logonews.png';
+import Tipewisatawan from './Tipewisatawan';
+//import axios
+import axios from 'axios';
+import Dropdown from 'react-bulma-dropdown'
+import Swal from 'sweetalert2'
+import Keuntungan from './Keuntungan';
+import Kategorihome from './Kategorihome';
+function Home(){
+  const [user, setUser] = useState({});
+  const [kategori, setKategori] = useState({});
+  const history = useHistory();
+  const token = localStorage.getItem("token");
+
+    const fetchData = async () => {
+      //set axios header dengan type Authorization + Bearer token
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      //fetch user from Rest API
+      await axios.get('http://localhost:8000/api/user')
+      .then((response) => {
+          //set response user to state
+          setUser(response.data);
+      })
+  }
+  useEffect(() => {  
+    //call function "fetchData"
+    fetchData();
+  }, []);
+  const isLogin = user.id
+
+return(
+    <>
+    <div className="container py-5">
+    <div className="py-5">
+    <h3 className="font-weight-bold mb-5 text-center text-capitalize font700 txtblack">Buat rencana perjalanan wisata anda dengan mudah</h3>
+    <center>
+    <div className="mt-5 row gx-4 justify-content-center">
+      <div className="col-lg-3 col-md-12 mb-3 ">
+      <img src="./travel.png" style={{width:"50px"}}/>
+      <h5 className="mt-4 font-weight-bold text-capitalize text-center font600 txtblack">Dapatkan perjalanan wisata</h5>
+      <p className="mt-2 font-weight-bold text-center">Jadwal itinerary hari demi hari penuh <br/> berdasarkan preferensi Anda</p>
+      </div>
+
+      <div className="col-lg-3 col-md-12 mb-3 ">
+      <img src="./calendar.png" style={{width:"50px"}}/>
+      <h5 className="mt-4 font-weight-bold text-capitalize text-center font600 txtblack">Sesuaikan perjalanan anda</h5>
+      <p className="mt-2 font-weight-bold text-center">Sempurnakan perjalanan Anda. <br/>Kami akan menemukan rute dan tempat wisata terbaik</p>
+      </div>
+
+      <div className="col-lg-3 col-md-12 mb-3 ">
+      <img src="./travel-map.png" style={{width:"50px"}}/>
+      <h5 className="mt-4 font-weight-bold text-capitalize text-center font600 txtblack">Simpan perjalanan anda</h5>
+      <p className="mt-2 font-weight-bold text-center">Simpan rencana perjalanan wisatamu</p>
+      </div>
+    </div>    
+    </center>
+    {isLogin ? (
+     <Kategorihome/>
+    ) : (
+      <Regisinfo/>
+      )}
+    <center>
+    {isLogin ? (
+      <Tipewisatawan/>
+    ) : (
+    <Keuntungan/>
+    )}    
+    </center>
+
+    </div>
+    </div>
+    <div style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1592106574625-0a404da5fba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80) center center`,backgroundSize:"cover",backgroundRepeat:"no-repeat",height:"300px"}}>
+    <div className=" container col-xl-10 col-xxl-8 px-4 py-5">
+    <div className="row align-items-center g-lg-5 py-5">
+      <div className="text-center">
+      <h5 className="display-5 fw-bold lh-1 mb-3 text-white">jogja is a travel memories you'll never forget</h5>
+      </div>
+      </div>
+      </div>
+      </div>
+
+   
+    </>
+)
+}
+
+export default Home
