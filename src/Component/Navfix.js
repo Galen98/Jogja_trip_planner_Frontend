@@ -88,7 +88,7 @@ const logoutHandler = async () => {
 };
 const defaultImage = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; // 
 
-const imageSrc = user.image ? `http://localhost:8000/storage/img/${user.image}` : defaultImage;
+const imageSrc = user.image ? `http://203.194.113.182/storage/img/${user.image}` : defaultImage;
 useEffect(() => {  
 fetchData();
 }, []);
