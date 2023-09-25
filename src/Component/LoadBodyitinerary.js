@@ -312,7 +312,7 @@ function LoadBodyitinerary(){
    
     return(
         <>
-<div className="container" style={{marginTop:"70px", marginBottom:"40px"}}>
+<div className="container" style={{marginTop:"70px", marginBottom:"40px", overflow:"hidden"}}>
     <div className="py-5">
     <div className="row gx-5">
     <div className="col-md-6">
