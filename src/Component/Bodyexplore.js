@@ -176,7 +176,6 @@ function Bodyexplore(){
               <div className="d-flex justify-content-between">
               <p className="small text-muted"><i className="fa-regular fa-clock"></i>  {item.operating_hours}</p>
               </div>
-
               <div className="d-flex justify-content-between">
               <p className="small">Jarak: {item.distance.toFixed(1)} KM</p>
               </div>

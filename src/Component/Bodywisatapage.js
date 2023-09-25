@@ -41,7 +41,7 @@ const fetchWisata = async () =>{
 
     return(
         <>
-    <div className="container" style={{marginTop:"70px"}}>
+    <div className="container" style={{marginTop:"70px", overflow:"hidden"}}>
     <div className="py-5">
     {dataArray.map((item,index)=>(
     <Breadcrumb>
