@@ -10,6 +10,7 @@ import markerResto from '../restomap.png'
 import markerKopi from '../kopi.png'
 import markerHotel from '../hotel.png'
 import Rating from './Rating';
+import Api from '../Api';
 const Exploremaps = () => {
 const customIcon = new L.Icon({
     iconUrl: markerIcon,
@@ -47,8 +48,8 @@ const customIcon = new L.Icon({
 
   const fetchnearby = async(latitude, longitude) =>{
     try{
-      const response = await axios.post(
-        'http://localhost:8000/api/explorewisata',
+      const response = await Api.post(
+        '/api/explorewisata',
         {
           latitude: latitude,
           longitude: longitude
@@ -67,8 +68,8 @@ const customIcon = new L.Icon({
 
   const fetchhotel = async(latitude, longitude) =>{
     try{
-      const response = await axios.post(
-        'http://localhost:8000/api/listhotel',
+      const response = await Api.post(
+        '/api/listhotel',
         {
           latitude: latitude,
           longitude: longitude
@@ -87,8 +88,8 @@ const customIcon = new L.Icon({
 
   const fetchResto = async(latitude, longitude) =>{
     try{
-      const response = await axios.post(
-        'http://localhost:8000/api/listresto',
+      const response = await Api.post(
+        '/api/listresto',
         {
           latitude: latitude,
           longitude: longitude
@@ -132,13 +133,13 @@ const customIcon = new L.Icon({
       mapRef.current.setView(userLocation, 14);
     }
   }, [userLocation]);
-  console.log(resto)
+
  
 
   
   return (
     <div className='rounded-9'>
-    <MapContainer ref={mapRef} center={userLocation || [0, 0]} zoom={14} style={{ width: '100%', height: '500px'}} className='roundbottom'>
+    <MapContainer ref={mapRef} center={userLocation || [0, 0]} zoom={14} style={{ width: '100%', height: '500px'}}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -177,12 +178,13 @@ const customIcon = new L.Icon({
       <Marker position={[location.latitude, location.longitude]}   icon={icons}>
           <Popup>
           <div>
-      <p style={{fontWeight:"bold"}}>{location.name}</p>
+      <p style={{fontWeight:"bold"}}>{location.nama}</p>
       <p><img src={location.image}
         className="card-img-top img-responsive" style={{objectFit:"cover", minHeight:"50px"}}/></p>
       <div className="ms-auto text-warning">
                 <Rating value={location.rating} maxValue={5} />
                 </div>
+                <p>Harga: {location.harga}</p>
           <a href={`${location.url}`} target='_blank' className="btn btn-sm btn-primary text-white text-text-capitalize">Dapatkan Arah</a>
         </div>
           </Popup>

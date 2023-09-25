@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Rating from './Rating';
+import { Breadcrumb } from 'react-bootstrap';
 import LikeButton from './LikeButton';
+import Api from '../Api';
 function Bodyrekomendasi(){
     const userToken = localStorage.getItem("token")
     const[userrekomendasi, setUserrekomendasi] = useState([])
     const token = localStorage.getItem('token')
     const Fetchrekomendasi = async()=>{
-        const response = await axios.get (`http://localhost:8000/api/user/recommendations`, {
+        const response = await Api.get (`/api/user/recommendations`, {
             headers:{
                 Authorization: `Bearer ${userToken}`
             }
@@ -30,12 +32,17 @@ function Bodyrekomendasi(){
         <>
         <div className="container" style={{marginTop:"70px"}}>
     <div className="py-5">
-    <h1 className='text-capitalize txtblack'>Rekomendasi untuk anda</h1>
+    <Breadcrumb>
+      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="/favorite">Favorites</Breadcrumb.Item>
+      <Breadcrumb.Item active>Rekomendasi Wisata</Breadcrumb.Item>
+    </Breadcrumb>
+    <h2 className='text-capitalize txtblack fw-bolder'>Rekomendasi untuk anda</h2>
     <div class="mt-3 row gx-3 justify-content-center">
      {userrekomendasi.map(item => (
         <div className="col-lg-3 col-md-6 mb-3 mt-3">
     <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
-      <a className='hover hover-2 rounded-6' href='/'>
+      <a className='hover hover-2 rounded-6' href={`/wisata/${item.id}`}>
        <img src={item.image}
         className="card-img-top img-responsive" style={{objectFit:"cover", minHeight:"200px"}}/>
         <div className="hover-overlay"></div>

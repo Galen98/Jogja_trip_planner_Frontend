@@ -1,50 +1,32 @@
-//import hook react
 import React, { useState, useEffect } from 'react';
-
-//import hook useHitory from react router dom
 import { useHistory } from 'react-router';
-
-//import axios
 import axios from 'axios';
 import Footerfix from '../Component/Footerfix';
 import Swal from 'sweetalert2'
 import Navfix from '../Component/Navfix';
+import Api from '../Api';
 function Login() {
-
-    //define state
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const Tokens = localStorage.getItem("token");
-
-    //define state validation
     const [validation, setValidation] = useState([]);
-
-    //define history
     const history = useHistory();
 
-    //hook useEffect
+    
     useEffect(() => {
-
-        //check token
         if(localStorage.getItem('token')) {
-
-            //redirect page dashboard
             history.push('/');
         }
     }, []);
 
-    //function "loginHanlder"
     const loginHandler = async (e) => {
         e.preventDefault();
-        //initialize formData
         const formData = new FormData();
-        //append data to formData
         formData.append('email', email);
         formData.append('password', password);
       
 
         try {
-          const response = await axios.post('http://localhost:8000/api/login', formData);
+          const response = await Api.post('/api/login', formData);
           
           Swal.fire({
             icon: 'success',
@@ -58,7 +40,7 @@ function Login() {
           localStorage.setItem('userData', JSON.stringify(response.data.user));
           
           try {
-            const likedAttractionsResponse = await axios.get('http://localhost:8000/api/user/likes', {
+            const likedAttractionsResponse = await Api.get('/api/user/likes', {
               headers: {
                 Authorization: `Bearer ${response.data.token}`
               }
@@ -84,10 +66,11 @@ function Login() {
         <div className="container" style={{ marginTop: "100px" }}>
             <div className="row justify-content-center">
                 <div className="col-md-4">
-                    <div className="card border-0 rounded-6 shadow-sm">
+                    <div className="card border rounded-6 shadow-sm">
                         <div className="card-body ">
                         <center> <img className='logos' src='./logonews.png' alt="Logo" /></center>
-                            <h5 className="fw-bold text-center">Welcome-Back.</h5>
+                            <h4 className="fw-bold text-center txtblack">Selamat datang kembali</h4>
+                            <hr/>
                             <br/>
                             {
                                 validation.message && (
@@ -126,7 +109,7 @@ function Login() {
                                     <p>Lupa password? <a href='/register'>klik disini</a> </p>
                                 </div>
                                 <div className="d-grid gap-2 text-center">
-                                 <center>  <button type="submit" className="btn btn-success rounded-7 text-capitalize">Masuk</button></center>
+                                 <center>  <button type="submit" className="btn butonprimer rounded-7 text-capitalize">Masuk</button></center>
                                 </div>
                                 
                             </form>

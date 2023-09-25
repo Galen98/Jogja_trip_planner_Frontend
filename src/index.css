@@ -41,9 +41,45 @@ body {
 
 .logos{
     border-radius: 500px;
-    height: 100px;
+    height: 70px;
 }
 
+ul.horizontal-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: auto; 
+  margin-bottom: 20px; 
+  padding-bottom: 10px;
+}
+
+.tablemobile{
+  justify-content: flex-start;
+  overflow-y: auto; 
+}
+
+ul.horizontal-list li {
+  margin-left: 10px;
+  position: relative; /* Untuk mengatur posisi elemen berdasarkan pseudo-class */
+}
+
+ul.horizontal-list li a {
+  color: grey; /* Untuk mengatur posisi elemen berdasarkan pseudo-class */
+}
+
+ul.horizontal-list li a:hover {
+  color: rgb(0, 0, 0); /* Untuk mengatur posisi elemen berdasarkan pseudo-class */
+}
+
+
+
+.light-dropdown {
+  background-color: #f8f9fa; /* This is a light gray color for the background */
+  border: 1px solid #ced4da; /* Add a border for a clean look */
+  color: #343a40; /* Text color for readability */
+}
 
 .skeleton {
   background-color: #f1f1f1;
@@ -121,7 +157,7 @@ body {
     font-size: smaller;
   }
   .headerprofile{
-  background-color: black;
+  background-color: rgb(225, 225, 225);
   background-repeat: no-repeat;
   background-size: 1000px 400px;
 
@@ -238,13 +274,27 @@ body {
     position: absolute;
 }
 .darkbtn{
-  background-color: black;
+  background-color: #0c0c0d;
   color: white;
 }
 .darkbtn:hover{
-  background-color: #0e0d0d;
+  background-color: #131212;
   color: white;
 }
+.custom-button:hover{
+  background-color: #1974D2;
+  color: white;
+}
+.custom-button-install:hover{
+  background-color: rgb(28, 28, 28);
+  color: white;
+}
+
+.actives{
+  background-color: rgb(28, 28, 28);
+  color: white;
+}
+
 .select, .select select { 
     width: 100%;
     }
@@ -652,7 +702,7 @@ body {
     }
 
     .mask{
-      background-color: rgba(251, 251, 251, 0.15);
+      background-color: rgba(241, 241, 241, 0.15);
     }
 
     .custom-nav-dropdown .dropdown-toggle {
@@ -729,7 +779,7 @@ body {
 }
 
 .txtblack{
-  color: black;
+  color: rgb(31, 31, 31);
 }
 .hearthover:hover{
   color: red;
@@ -738,4 +788,205 @@ body {
   width: 32px; /* Set the desired width */
   height: 32px; /* Set the desired height */
 }
+
+.at-176__pin {
+  fill: #007dfa;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_pegunungan {
+  fill: #005c17;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_candi {
+  fill: #232323;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_belanja {
+  fill: #e62727;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_sungai {
+  fill: #001373;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_desa {
+  fill: #a18400;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_budaya {
+  fill: #452f00af;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_rekreasi {
+  fill: #00f2ffaf;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_museum {
+  fill: #f6ff00;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_alam {
+  fill: #00ff5963;
+  filter: url("#dropShadow");
+}
+
+.at-176__pin_seni {
+  fill: #f700ffd0;
+  filter: url("#dropShadow");
+}
+
+.itinerary-container {
+
+  align-items: center;
+  border-left: 2px solid #ccc; 
+}
+
+
+.itinerary-card {
+  display: flex; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px; 
+  align-items: center; 
+}
+
+
+.itinerary-image {
+  width: 100px;
+  height: 100px; 
+  border-radius: 20%;
+  margin-right: 10px;
+  object-fit: cover; 
+}
+
+.itinerary-content {
+  flex: 1; 
+}
+
+
+.itinerary-content h4 {
+  font-size: 1.0rem; 
+}
+
+.itinerary-content p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+
+
+
+
+.butonprimer{
+  background-color: #1974D2;
+  color: white;
+}
+.butonprimer:hover{
+  background-color: #266ecd;
+  color: white;
+}
+
+.butonsukses{
+  background-color: #6da710;
+  color: white;
+}
+
+.butonsukses:hover{
+  background-color: #7bb918;
+  color: white;
+}
+
+.custom-prev-arrow,
+.custom-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-prev-arrow {
+  left: -40px;
+}
+
+.custom-next-arrow {
+  right: -40px;
+}
+
+@media (max-width: 992px) {
+  .custom-prev-arrow,
+  .custom-next-arrow {
+    top: calc(50% - 20px);
+    font-size: 20px;
+  }
+
+  .custom-prev-arrow {
+    left: -30px;
+  }
+
+  .custom-next-arrow {
+    right: -30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-prev-arrow,
+  .custom-next-arrow {
+    font-size: 18px;
+  }
+
+  .custom-prev-arrow {
+    left: -20px;
+  }
+
+  .custom-next-arrow {
+    right: -20px;
+  }
+}
+
+/* styles.css */
+/* styles.css */
+.image-large {
+  min-height: 410px;
+  max-height: 410px;
+  min-width: 100%;
+}
+
+.image-small {
+  max-height: 200px;
+  margin-bottom: 10px;
+  height: auto;
+  margin-right: 10px;
+  min-width: 100%;
+}
+
+.inner-page {
+  padding: 20px;
+}
+
+.inner-page h2 {
+  color: #333;
+}
+
+.inner-page p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
+
 

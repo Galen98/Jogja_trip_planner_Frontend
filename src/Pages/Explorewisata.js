@@ -11,25 +11,14 @@ function Explorewisata(){
     const history = useHistory();
     const token = localStorage.getItem("token");
 
-    const fetchData = async () => {
-        //set axios header dengan type Authorization + Bearer token
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-        //fetch user from Rest API
-        await axios.get('http://localhost:8000/api/user')
-        .then((response) => {
-            //set response user to state
-            setUser(response.data);
-        })
-    }
-
-
     useEffect(() => {
         if(!token) {
             history.push('/');
-        }
-       
-        fetchData();
+        }  
     }, []);
+
+
+
 return(
     <>
     <Navfix/>

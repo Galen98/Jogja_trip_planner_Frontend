@@ -1,23 +1,16 @@
 import axios from 'axios';
 import React, { useState, Component, useEffect  } from 'react';
 import { Link } from 'react-router-dom';
+import Bodypopuler from './Bodypopuler';
+import Api from '../Api';
 function Kategorihome(){
   const [kategori, isKategori] = useState([])
   const fetchKategori = async () =>{
-    const response = await axios.get('http://localhost:8000/api/listkategori');
+    const response = await Api.get('/api/listkategori');
     const data = await response.data;
     isKategori(data)
     
   }
-
-  // const [activeItem, setActiveItem] = useState(null);
-
-  // const handleItemClick = (itemId) => {
-  //   setActiveItem(itemId);
-  // };
-
-  // // Filter the data array to exclude the active item
-  // const filteredData = kategori.filter((item) => item.id !== activeItem);
 
   useEffect(()=>{
   fetchKategori()
@@ -25,10 +18,10 @@ function Kategorihome(){
   console.log(kategori)
     return(
         <>
-            <div className="container py-5">
+            <div className="container">
         <div className="py-5">
         <h3 className="font-weight-bold mb-0 text-center text-capitalize font700 txtblack">Jelajahi Kategori Wisata</h3>
-    <div className="mt-5 mb-5 row gx-2 justify-content-center">
+    <div className="mt-5 mb-0 row gx-2 justify-content-center">
     { kategori.map((konten, index) =>  (
       <div className="col-lg-3 col-md-6 mb-3">
       <Link to={`/kategori/${konten.namakategori}`} >
@@ -43,10 +36,9 @@ function Kategorihome(){
       </div>
       ))}
     </div>
-        
   </div>
-  
   </div>
+  <Bodypopuler/>
         </>
     )
 }

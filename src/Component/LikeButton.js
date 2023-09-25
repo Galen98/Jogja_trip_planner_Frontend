@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import axios from 'axios';
-
+import Api from '../Api';
 const LikeButton = ({ attractionId, userToken }) => {
     const [isLiked, setIsLiked] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -9,7 +9,7 @@ const LikeButton = ({ attractionId, userToken }) => {
     useEffect(() => {
       const fetchLikedAttractions = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/user/likes`, {
+          const response = await Api.get(`/api/user/likes`, {
             headers: {
               Authorization: `Bearer ${userToken}`
             }
@@ -35,13 +35,13 @@ const LikeButton = ({ attractionId, userToken }) => {
   
       try {
         if (isLiked) {
-          await axios.delete(`http://localhost:8000/api/unlike/${attractionId}`, {
+          await Api.delete(`/api/unlike/${attractionId}`, {
             headers: {
               Authorization: `Bearer ${userToken}`
             }
           });
         } else {
-          await axios.post(`http://localhost:8000/api/like/${attractionId}`, null, {
+          await Api.post(`/api/like/${attractionId}`, null, {
             headers: {
               Authorization: `Bearer ${userToken}`
             }

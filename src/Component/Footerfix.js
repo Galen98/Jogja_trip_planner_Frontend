@@ -48,24 +48,22 @@ function Footerfix() {
     });
   };
     return(
-        <>
-        <div className="container">
-        
-  <footer className="py-3 my-4">
+        <>        
+  <footer className="py-3 my-4" >
   <center>
     <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-      <li className="nav-item"><a href="#" class="nav-link px-2 text-muted">Inspirasi Perjalanan</a></li>
-      <li className="nav-item"><a href="#" class="nav-link px-2 text-muted">About Us</a></li>
-      <li className="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li className="nav-item"><a href="#" class="nav-link px-2 text-muted">Panduan Membuat Rencana Perjalanan</a></li>
+      <li className="nav-item"><a href="/inspirasiperjalanan" class="nav-link px-2 text-muted">Inspirasi Perjalanan</a></li>
+      <li className="nav-item"><a href="/aboutus" class="nav-link px-2 text-muted">About Us</a></li>
+      <li className="nav-item"><a href="/faq" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li className="nav-item"><a href="/panduan" class="nav-link px-2 text-muted">Panduan Membuat Rencana Perjalanan</a></li>
     </ul>
     <p className="text-center text-muted">&copy; 2023 Jogja Trip Planner</p>
-    <center><button id="install-button" className='btn rounded-7 text-capitalize darkbtn text-capitalize' style={{ display: 'none' }}>
+    <center><button id="install-button" className='btn btn-outline-dark custom-button-install rounded-9 text-capitalize' style={{ display: 'none' }}>
         Install This App
       </button> </center>
       </center>
   </footer>
-</div>
+
         </>
     )
 }
