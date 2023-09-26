@@ -163,7 +163,7 @@ function Bodyfavorit(){
     
     return(
         <>
-    <div className="container" style={{marginTop:"70px"}}>
+    <div className="container" style={{marginTop:"70px", overflow:"hidden"}}>
     <div className="py-5">
     <Breadcrumb>
       <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
