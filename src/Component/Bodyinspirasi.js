@@ -32,7 +32,7 @@ function Bodyinspirasi(){
                 <a href={`/itinerary/load?itinerary_id=${item.link}`}><img src={item.image} className="w-100 rounded-3 mb-2" style={{maxHeight:"150px"}}/></a>
                 <p className='lead fw-normal mb-1 fontprofile text-capitalize'>{item.judul}</p>
                 <p className="mb-4">{new Date(item.created_at).toLocaleDateString()}</p>
-               <p className='small muted'> <img src={"https://203.194.113.182/storage/img/"+item.img_user} class="rounded-9 mb-3" style={{width: "30px"}} alt="Avatar"/> By: {item.nama_user}</p>
+               <p className='small muted'> <img src={"https://www.jogjatripplanner.cloud/storage/img/"+item.img_user} class="rounded-9 mb-3" style={{width: "30px"}} alt="Avatar"/> By: {item.nama_user}</p>
               </div>
     </div>
     ))}
