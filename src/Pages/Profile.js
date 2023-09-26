@@ -7,11 +7,18 @@ import Api from '../Api';
 import Komponenheaderprofile from '../Component/Komponenheaderprofile';
 import Footerfix from '../Component/Footerfix';
 function Profile() {
-    const user = JSON.parse(localStorage.getItem("userData"));
+    const [user, setUser] = useState({});
     const history = useHistory();
     const token = localStorage.getItem("token");
     const [itineraryuser, setItineraryuser] = useState([])
     const [itineraryToDelete, setItineraryToDelete] = useState(null);
+    const fetchData = async () => {
+        Api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+        await Api.get('/api/user')
+        .then((response) => {
+            setUser(response.data);
+        })
+    }
     const fetchitinerary = async() =>{
         try{
             const userToken = localStorage.getItem("token");
@@ -45,6 +52,7 @@ function Profile() {
             history.push('/login');
         }
         fetchitinerary()
+        fetchData()
     }, []);
 
     const hapusbtn = async(itineraryId)=>{
@@ -77,7 +85,8 @@ function Profile() {
             }
           })
     }
-    const isTipe = user && user.tipe
+   
+    const isTipe =user.tipe
 
 return(
     <>
