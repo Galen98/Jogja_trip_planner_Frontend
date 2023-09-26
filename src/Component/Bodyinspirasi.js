@@ -2,16 +2,45 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Breadcrumb } from 'react-bootstrap';
 import Api from '../Api';
+import Swal from 'sweetalert2';
+
 function Bodyinspirasi(){
+    const [isLoading, setIsLoading] = useState(true)
     const [inspirasi, setInspirasi] = useState([])
 
+    useEffect(() => {
+        if (isLoading) {
+          Swal.fire({
+            title: 'Loading',
+            text: 'Mohon tunggu...',
+            allowOutsideClick: false,
+            timerProgressBar: true,
+            showConfirmButton: false,
+            timer: 2000,
+            onBeforeOpen: () => {
+              Swal.showLoading();
+            },
+          });
+        } else {
+          Swal.close();
+        }
+      }, [isLoading]);
+
     const fetchinspirasi = async()=>{
+        setIsLoading(true)
+        try{
         const response = await Api.get('/api/inspirasiperjalanan')
         setInspirasi(response.data)
+        setIsLoading(false)
+        } catch(error){
+        setIsLoading(false)
+        }
+        
     }
 
       useEffect (()=>{
     fetchinspirasi()
+   
       },[])
 
       console.log(inspirasi)
