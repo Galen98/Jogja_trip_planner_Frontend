@@ -121,7 +121,7 @@ export default function Formprofile() {
                         <form onSubmit={updateProfile}>
                             <div className="mb-3">
                             {isImage ? (
-    <img src={"http://203.194.113.182/storage/img/"+image} className='img-fluid img-thumbnail mt-4 mb-2 ' style={{width:"150px",zIndex:"1"}}/>
+    <img src={"https://203.194.113.182/storage/img/"+image} className='img-fluid img-thumbnail mt-4 mb-2 ' style={{width:"150px",zIndex:"1"}}/>
 ) : (
     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" className='img-fluid img-thumbnail mt-4 mb-2' style={{width:"150px", zIndex:"1", borderRadius: "100px"}}/>
 )}                              <br/>
