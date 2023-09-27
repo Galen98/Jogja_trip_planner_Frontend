@@ -471,7 +471,7 @@ function  Bodyitinerarybackpacker(){
    
     return(
         <>
-<div className="container" style={{marginTop:"70px", marginBottom:"40px", overflow:"hidden"}}>
+<div className="container" style={{marginTop:"70px", marginBottom:"40px"}}>
     <div className="py-5">
     <div className='rounded-8' style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image}) center center`,backgroundSize:"cover",backgroundRepeat:"no-repeat !important", marginBottom:"35px"}}>
     <div className=" container col-xl-10 col-xxl-8 px-4 py-5">
