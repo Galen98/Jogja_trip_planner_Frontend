@@ -54,8 +54,6 @@ function LoadBodyitinerary(){
   const [isRestaurantOpen, setRestaurantOpen] = useState(false); 
   const [isPaketOpen, setPaketOpen] = useState(false)
 
-
-
   useEffect(() => {
     Api.get('/api/cuaca', {
       params: {

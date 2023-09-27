@@ -110,29 +110,29 @@ return(
 <br/>
 <p className='lead fw-normal mb-1 fontprofile'>Siapakah anda sebagai wisatawan?</p>
 {isTipe == 'grup' ? (
-    <input className='form-control fontisi' value="Grup Wisata" readOnly />
+    <input className='form-control fontisi' style={{border:"none"}}  value="Grup Wisata" readOnly />
 ) : (
     <p></p>
 )}
 {isTipe == 'backpacker' ? (
-    <input className='form-control fontisi' value="Wisatawan Backpacker" readOnly />
+    <input className='form-control fontisi' style={{border:"none"}}  value="Wisatawan Backpacker" readOnly />
 ) : (
     <p></p>
 )}
 {isTipe == 'family' ? (
-    <input className='form-control fontisi' value="Wisatawan Keluarga" readOnly />
+    <input className='form-control fontisi' style={{border:"none"}} value="Wisatawan Keluarga" readOnly />
 ) : (
     <p></p>
 )}
 <br/>
 <p className='lead fw-normal mb-1 fontprofile'>Motivasi</p>
-<textarea className='form-control fontisi' style={{height:"100px"}} value={user.motivation} readOnly></textarea>
+<textarea className='form-control fontisi' style={{height:"100px", border:"none"}} value={user.motivation} readOnly></textarea>
 <br/>
 <p className='lead fw-normal mb-1 fontprofile text-capitalize'>Pekerjaan</p>
-<input className='form-control fontisi' value={user.job} readOnly />
+<input className='form-control fontisi' style={{border:"none"}}  value={user.job} readOnly />
 <br/>
 <p className='lead fw-normal mb-1 fontprofile text-capitalize'>Usia</p>
-<input className='form-control fontisi' value={user.usia} readOnly />
+<input className='form-control fontisi' style={{border:"none"}}  value={user.usia} readOnly />
 </div>
 <div className="d-flex justify-content-between align-items-center mb-4">
 <h4 className='lead fw-bold mb-1 txtblack' style={{fontWeight:"bold"}}>History rencana perjalanan wisata</h4>
