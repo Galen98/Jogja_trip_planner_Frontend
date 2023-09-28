@@ -148,6 +148,7 @@ function Bodyitinerarygrup(){
     }
   })
       history.push("/profile");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       Swal.fire({
         icon: 'success',
         title: 'Berhasil',

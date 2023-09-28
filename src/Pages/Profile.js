@@ -139,27 +139,27 @@ return(
 </div>
 <div className="row">
 {itineraryuser.map((konten,index) => (
-              <div className="bg-image col-md-6 mb-2">
+              <div className="bg-image col-md-6 mb-5">
               {konten.tipe === "backpacker" ? (
       <a href={`/itinerarybackpacker?itinerary_id=${konten.link}`}>
-      <img src={konten.image} className="w-100 rounded-3 mb-2" style={{maxWidth:"300px"}}/>
+      <img src={konten.image} className="w-100 rounded-3 mb-2" style={{minHeight:"180px",maxHeight:"180px",maxWidth:"300px",minWidth:"300px"}}/>
       </a>
     ) :  konten.tipe === "keluarga" ? (
   <a href={`/itinerarykeluarga?itinerary_id=${konten.link}`}>
-    <img src={konten.image} className="w-100 rounded-3 mb-2" style={{ maxWidth: "300px" }} />
+    <img src={konten.image} className="w-100 rounded-3 mb-2" style={{minHeight:"180px",maxHeight:"180px",maxWidth: "300px",minWidth:"300px" }} />
   </a>
 ) : konten.tipe === "grup" ? (
   <a href={`/itinerarygrup?itinerary_id=${konten.link}`}>
-    <img src={konten.image} className="w-100 rounded-3 mb-2" style={{ maxWidth: "300px" }} />
+    <img src={konten.image} className="w-100 rounded-3 mb-2" style={{minHeight:"180px",maxHeight:"180px",maxWidth: "300px",minWidth:"300px" }} />
   </a>
 ) : (
       <a href={`/itinerary/load?itinerary_id=${konten.link}`}>
-      <img src={konten.image} className="w-100 rounded-3 mb-2" style={{maxWidth:"300px"}}/>
+      <img src={konten.image} className="w-100 rounded-3 mb-2" style={{minHeight:"180px",maxHeight:"180px",maxWidth:"300px",minWidth:"300px"}}/>
       </a>
     )}
-                <p className='lead fw-normal mb-1 fontprofile text-capitalize'>{konten.judul}</p>
+                <p className='lead fw-normal mb-0 fontprofile text-capitalize'>{konten.judul}</p>
                 <p className="mb-4">{new Date(konten.created_at).toLocaleDateString()}</p>
-                <button className='btn btn-outline-danger btn-sm rounded-9' onClick={()=>{
+                <button className='btn mb-0 btn-outline-danger btn-sm rounded-9' onClick={()=>{
                     hapusbtn(konten.link)
                 }}><i class="fa fa-trash-o"></i> Hapus</button>
               </div>
