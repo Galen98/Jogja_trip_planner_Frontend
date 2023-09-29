@@ -5,11 +5,13 @@ import { useHistory } from 'react-router-dom';
 import LikeButton from "./LikeButton";
 import { FormatRupiah } from "@arismun/format-rupiah";
 import Api from "../Api";
+import ContentLoader from 'react-content-loader'
 function Bodypopuler(){
     const [topwisata, setTopwisata] = useState([])
     const token = localStorage.getItem("token")
     const history = useHistory()
     const [week, setWeek] = useState('')
+    const [isSkleton, setIsSkleton] = useState(true);
 
     const fetchWeek = async () =>{
         const date = new Date().toISOString().split('T')[0];
@@ -72,6 +74,7 @@ function Bodypopuler(){
       const fetchpopuler = async ()=>{
         const response = await Api.get('/api/topwisata')
         setTopwisata(response.data)
+        setIsSkleton(false)
       }
 
       useEffect (()=>{
@@ -85,8 +88,31 @@ function Bodypopuler(){
         <div className="py-5">
         <h3 className="font-weight-bold mb-0 text-center text-capitalize font700 txtblack">10 Wisata Jogja Terpopuler</h3>
         <div className="mt-5 mb-0 row gx-2 justify-content-center">
-        <Slider {...settings}>
-        { topwisata.map((item, index) =>  (
+       
+        {isSkleton ? (
+          <>
+          <Slider {...settings}>
+      {["1", "2","2","2","1", "2","2","2","2","2"].map((index) => (
+        <div className="col-lg-3 col-md-6 mb-3 mt-3">
+    <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
+      <ContentLoader
+      width="100%" // Set to 100% to make it responsive
+      height={400}
+      viewBox="0 0 100% 400"
+      backgroundColor="#f0f0f0"
+      foregroundColor="#dedede"
+    >
+      <rect x="0%" y="0%" rx="4" ry="4" width="100%" height="50%" />
+    </ContentLoader>
+    </div>
+    </div>
+      ))}
+      </Slider>
+      </>
+        ):(
+          <> 
+          <Slider {...settings}>
+          { topwisata.map((item, index) =>  (
         <div className="col-lg-3 col-md-6 mb-3 mt-3">
     <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
       <a className='hover hover-2 rounded-6' href={`/wisata/${item.id}`}>
@@ -142,6 +168,10 @@ function Bodypopuler(){
   </div>
         ))}
         </Slider>
+          </>
+        )}
+       
+        
         </div>
         </div>
         </div>

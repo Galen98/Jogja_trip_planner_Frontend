@@ -194,15 +194,17 @@ function Bodyfavorit(){
 {isSkleton ? (
   <>
   <Card className="horizontal-card mb-4" style={{border:"none", boxShadow:"none"}}>
+  <div className="row no-gutters">
   <ContentLoader
       width="100%"
-      height={400}
+      height={300}
       viewBox="0 0 100% 400"
       backgroundColor="#f0f0f0"
       foregroundColor="#dedede"
     >
-      <rect x="0%" y="0%" width="100%" height="50%" />
+      <rect  width="100%" height="50%" />
     </ContentLoader>
+    </div>
     </Card>
     </>
 ): (
