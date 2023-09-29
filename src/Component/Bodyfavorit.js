@@ -8,9 +8,10 @@ import { useHistory,useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Api from '../Api';
-
+import ContentLoader from 'react-content-loader'
 function Bodyfavorit(){
   const [locationFetched, setLocationFetched] = useState(false);
+  const [isSkleton, setIsSkleton] = useState(true);
   const [userLocation, setUserLocation] = useState(null);
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('')
@@ -49,6 +50,7 @@ function Bodyfavorit(){
       
       
       setUserlike(response.data)
+      setIsSkleton(false)
       
     } catch (error){
       console.log(error)
@@ -168,15 +170,44 @@ function Bodyfavorit(){
     </Breadcrumb>
     <h2 className='txtblack'>Wisata Favorit Anda</h2>
     <br/>
-    {userlike.length === 0 ? (
-        <center>
-        <div className="col-sm-8 mb-10"><img src="https://img.freepik.com/premium-vector/no-data-concept-illustration_86047-485.jpg" style={{width:"320px"}}/>
-        <p className='text-capitalize text-muted'>Tidak Ada wisata yang anda sukai</p></div>
+    {isSkleton ? (
+      <p></p>
+    ):(
+      <>
+      {userlike.length === 0 ? (
+  <>
+    <center>
+      <div className="col-sm-8 mb-10">
+        <img src="https://img.freepik.com/premium-vector/no-data-concept-illustration_86047-485.jpg" style={{ width: "320px" }} />
+        <p className='text-capitalize text-muted'>Tidak Ada wisata yang anda sukai</p>
+      </div>
     </center>
-        ) : (
+  </>
+) : null}
+</>
+    )}
+
     <div className="row gx-5">
     <div className="col-md-6">
-    { userlike.map((konten, index) =>  (
+    <>
+
+{isSkleton ? (
+  <>
+  <Card className="horizontal-card mb-4" style={{border:"none", boxShadow:"none"}}>
+  <ContentLoader
+      width="100%"
+      height={400}
+      viewBox="0 0 100% 400"
+      backgroundColor="#f0f0f0"
+      foregroundColor="#dedede"
+    >
+      <rect x="0%" y="0%" width="100%" height="50%" />
+    </ContentLoader>
+    </Card>
+    </>
+): (
+  <>
+  { userlike.map((konten, index) =>  (    
     <Card className="horizontal-card mb-4" style={{border:"none", boxShadow:"none"}}>
       <div className="row no-gutters">
         <div className="col-md-4">
@@ -340,17 +371,21 @@ function Bodyfavorit(){
           </Button>
         </Modal.Footer>
       </Modal>
-
+      </>
+)}
+</>
     </div>
-
-    <div className="col-md-6 text-center">
+    {userlike.length !== 0 ? (
+  <>
+  <div className="col-md-6 text-center">
           <h1 className='txtblack'>Rekomendasi Wisata</h1>
           <p>Berdasarkan tempat wisata yang disukai</p>
           <a href='/rekomendasi'><u>Lihat rekomendasi wisata</u></a>
     </div>
-
+  </>
+    ) : null}
   </div>
-  )}
+
     </div>
     </div>
     
