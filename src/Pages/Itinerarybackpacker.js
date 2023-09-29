@@ -1,7 +1,7 @@
 import Navfix from "../Component/Navfix"
 import Footerfix from '../Component/Footerfix';
 import Bodyitinerarybackpacker from "../Component/Bodyitinerarybackpacker";
-import React, { useState, Component, useEffect  } from 'react';
+import React from 'react';
 
 
 function Itinerarybackpacker(){

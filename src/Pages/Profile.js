@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link ,useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 import Navfix from '../Component/Navfix';
 import Swal from 'sweetalert2'
 import { Breadcrumb } from 'react-bootstrap';

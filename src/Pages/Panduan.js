@@ -1,6 +1,5 @@
 import Navfix from "../Component/Navfix"
 import Footerfix from "../Component/Footerfix"
-import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Breadcrumb } from "react-bootstrap";
 function Panduan(){

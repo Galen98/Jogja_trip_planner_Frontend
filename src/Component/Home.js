@@ -1,15 +1,9 @@
-import React, { useState, Component, useEffect  } from 'react';
+import React, { useState } from 'react';
 import Regisinfo from './Regisinfo';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom'
-import logo from './logonews.png';
-import Tipewisatawan from './Tipewisatawan';
-import axios from 'axios';
-import Dropdown from 'react-bulma-dropdown'
-import Swal from 'sweetalert2'
 import Keuntungan from './Keuntungan';
 import Kategorihome from './Kategorihome';
-import { Container, Row, Col } from 'react-bootstrap';
+
 function Home(){
   const user = JSON.parse(localStorage.getItem("userData"));
   const [kategori, setKategori] = useState({});
@@ -51,12 +45,11 @@ return(
       )}
     <center>
     {isLogin ? (
-      <Tipewisatawan/>
+    <p></p>
     ) : (
     <Keuntungan/>
     )}    
     </center>
-   
     </div>
     </div>
     <div style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1592106574625-0a404da5fba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80) center center`,backgroundSize:"cover",backgroundRepeat:"no-repeat",height:"300px"}}>
@@ -67,9 +60,7 @@ return(
       </div>
       </div>
       </div>
-      </div>
-
-   
+      </div>   
     </>
 )
 }

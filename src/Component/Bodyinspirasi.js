@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Breadcrumb } from 'react-bootstrap';
 import Api from '../Api';
 import Swal from 'sweetalert2';
@@ -58,7 +57,7 @@ function Bodyinspirasi(){
         {inspirasi.map(item => (
     <div className="col-lg-3 col-md-6 mb-3 mt-3">
     <div className="bg-image" style={{display:"flex",flexDirection:"column",height:"100%"}}>
-                <a href={`/itinerary/load?itinerary_id=${item.link}`}><img src={item.image} className="w-100 rounded-3 mb-2" style={{maxHeight:"150px"}}/></a>
+                <a href={`/itinerary/load?itinerary_id=${item.link}`}><img src={item.image} className="w-100 rounded-3 mb-2" style={{minHeight:"150px",maxHeight:"150px"}}/></a>
                 <p className='lead fw-normal mb-1 fontprofile text-capitalize'>{item.judul}</p>
                 <p className="mb-4">{new Date(item.created_at).toLocaleDateString()}</p>
                <p className='small muted'> By: {item.nama_user}</p>

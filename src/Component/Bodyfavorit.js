@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Card, Breadcrumb } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Rating from './Rating';
 import LikeButton from './LikeButton';
-import ItineraryItem from './ItineraryItem';
 import Modal from 'react-bootstrap/Modal';
-import { useParams, useHistory,useLocation } from 'react-router-dom';
+import { useHistory,useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Api from '../Api';

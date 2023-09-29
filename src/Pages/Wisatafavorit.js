@@ -1,9 +1,9 @@
 import Navfix from "../Component/Navfix"
 import Footerfix from "../Component/Footerfix"
 import Bodyfavorit from "../Component/Bodyfavorit";
-import React, { useState, useEffect } from 'react';
-import { Link ,useHistory } from 'react-router';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router';
+
 function Wisatafavorit(){
     const token = localStorage.getItem("token");
     const history = useHistory();

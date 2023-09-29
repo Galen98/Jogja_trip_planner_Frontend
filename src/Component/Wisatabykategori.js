@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams} from 'react-router';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import Rating from './Rating';
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
 import LikeButton from './LikeButton';
 import { FormatRupiah } from "@arismun/format-rupiah";
-import { Navbar, Nav } from 'react-bootstrap';
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 import Swal from 'sweetalert2';
 import Api from '../Api';
 function Wisatabykategori(){

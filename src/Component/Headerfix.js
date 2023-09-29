@@ -1,12 +1,7 @@
-import logo from './logonews.png';
 import Button from 'react-bootstrap/Button';
-import React, { useState, Component, useEffect  } from 'react';
-//import hook useHitory from react router dom
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom'
-//import axios
-import axios from 'axios';
-import Swal from 'sweetalert2'
+
 function Headerfix(){
   const [isActive, setisActive] = useState(false);  
   const user = JSON.parse(localStorage.getItem("userData"));

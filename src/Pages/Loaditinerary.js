@@ -1,7 +1,7 @@
 import Navfix from "../Component/Navfix"
 import Footerfix from '../Component/Footerfix';
 import LoadBodyitinerary from "../Component/LoadBodyitinerary";
-import React, { useState, Component, useEffect  } from 'react';
+import React from 'react';
 function Loaditinerary(){
     return(
 <>

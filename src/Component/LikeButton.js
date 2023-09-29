@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route } from "react-router-dom";
-import axios from 'axios';
 import Api from '../Api';
 const LikeButton = ({ attractionId, userToken }) => {
     const [isLiked, setIsLiked] = useState(null);

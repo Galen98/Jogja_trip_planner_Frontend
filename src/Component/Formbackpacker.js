@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'; 
 import { Form, Dropdown, Button } from 'react-bootstrap';
-import axios from 'axios';
 import Api from '../Api';
 const Formbackpacker = () =>{
     const[value, setValue]=useState(1)

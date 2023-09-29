@@ -1,6 +1,5 @@
 import Slider from "react-slick";
-import React, { useEffect, useState, useRef } from 'react';
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
 import Rating from "./Rating";
 import { useHistory } from 'react-router-dom';
 import LikeButton from "./LikeButton";

@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import Footerfix from '../Component/Footerfix';
 import Navfix from '../Component/Navfix';
-import axios from 'axios';
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import Api from '../Api';
 function Register() {
     const [name, setName] = useState("");

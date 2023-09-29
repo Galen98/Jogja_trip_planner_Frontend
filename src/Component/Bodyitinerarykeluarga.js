@@ -1,20 +1,14 @@
-import React, { useEffect, useState,useRef } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Rating from './Rating';
 import Slider from 'react-slick';
 import { useLocation} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useHistory, useParams  } from 'react-router';
-import { Card, Button, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
 import Modal from 'react-bootstrap/Modal';
-import { MapContainer, TileLayer, Marker, Popup, Tooltip, Polyline } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import markerResto from '../restomap.png'
-import markerWisata from '../wisatamap.png'
-import markerIcon from '../mapmakersuser.png';
 import { FormatRupiah } from '@arismun/format-rupiah';
-import markerHotel from '../hotel.png'
 import L from 'leaflet';
 import Api from '../Api';
 function Bodyitinerarykeluarga(){

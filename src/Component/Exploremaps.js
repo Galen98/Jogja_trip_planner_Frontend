@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import axios from 'axios';
 import markerIcon from '../mapmakersuser.png';
 import markerWisata from '../wisatamap.png'
 import markerResto from '../restomap.png'

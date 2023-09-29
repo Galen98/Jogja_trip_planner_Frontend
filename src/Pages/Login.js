@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
-import axios from 'axios';
 import Footerfix from '../Component/Footerfix';
 import Swal from 'sweetalert2'
 import Navfix from '../Component/Navfix';

@@ -1,18 +1,12 @@
 import React, { useState, Component, useEffect  } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom'
 import logo from '../logofix.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
 import Swal from 'sweetalert2'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Modal from 'react-bootstrap/Modal'
-import { Form } from 'react-bootstrap';
 import {
   MDBIcon,
 } from 'mdb-react-ui-kit';

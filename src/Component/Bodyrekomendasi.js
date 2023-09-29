@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Rating from './Rating';
 import { Breadcrumb } from 'react-bootstrap';
 import LikeButton from './LikeButton';

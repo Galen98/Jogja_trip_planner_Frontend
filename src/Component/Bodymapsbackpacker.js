@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import ReactDOMServer from 'react-dom/server'; 
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import axios from 'axios';
 import Rating from './Rating';
-import LikeButton from './LikeButton';
 import markerWisata from '../wisatamap.png'
 import markerHotel from '../hotel.png'
 import markerIcon from '../mapmakersuser.png';

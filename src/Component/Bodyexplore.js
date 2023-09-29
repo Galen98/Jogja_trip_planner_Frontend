@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route } from "react-router-dom";
-import axios from 'axios';
-import Kategorihome from './Kategorihome';
-import { Card } from 'react-bootstrap';
 import Exploremaps from './Exploremaps';
 import Rating from './Rating';
 import Swal from 'sweetalert2';

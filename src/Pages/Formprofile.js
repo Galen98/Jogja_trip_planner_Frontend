@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Footerfix from '../Component/Footerfix';
 import { useHistory } from 'react-router';
-import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Navfix from '../Component/Navfix';
 import Swal from 'sweetalert2'
 import { Breadcrumb } from 'react-bootstrap';
-import axios from 'axios';
 import Api from '../Api';
 export default function Formprofile() {
     const [image, setImage] = useState('');

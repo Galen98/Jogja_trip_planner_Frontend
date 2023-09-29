@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams, Link } from 'react-router';
-import axios from 'axios';
+import { useHistory, useParams} from 'react-router';
 import Api from '../Api';
 function Headerkategori(){
     const [kategoridesc, setkategoriDesc] = useState([]);

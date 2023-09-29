@@ -2,11 +2,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Footerhome from '../Component/Footerhome';
-import { useHistory } from 'react-router';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
 import Nav from '../Component/Nav';
-import axios from 'axios';
+
 
 export default function Formitinerary(){
 

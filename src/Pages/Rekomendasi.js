@@ -1,7 +1,7 @@
 import Navfix from "../Component/Navfix"
 import Footerfix from "../Component/Footerfix"
 import Bodyrekomendasi from "../Component/Bodyrekomendasi"
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function Rekomendasi(){
     

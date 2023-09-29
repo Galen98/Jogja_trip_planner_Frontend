@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams} from 'react-router';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import Rating from './Rating';
-import LikeButton from './LikeButton';
 import { FormatRupiah } from "@arismun/format-rupiah";
-import { Navbar, Nav, Breadcrumb } from 'react-bootstrap';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import {Breadcrumb } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import Swal from 'sweetalert2';
 import markerWisata from '../wisatamap.png'
 import { Carousel } from 'react-bootstrap';
 import Api from '../Api';
