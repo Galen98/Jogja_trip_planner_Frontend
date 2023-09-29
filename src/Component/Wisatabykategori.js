@@ -256,7 +256,7 @@ const renderPaginations = () => {
             }`}
             onClick={() => handleFilterChange('Untuk Lansia')}> Untuk lansia</button></li>
       </ul>
-      {isLoading? (
+      {isSkleton ? (
         <>
         <div className="col-lg-3 col-md-6 mb-3 mt-3">
     <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
@@ -312,9 +312,12 @@ const renderPaginations = () => {
     </div>
     </>
       ) : (
-        renderDatadesktop()
-      )}  
+        <>
+        {renderDatadesktop()}
         {renderPaginations()}
+        </>
+      )}  
+        
         </div>
       </div>
       </div>
