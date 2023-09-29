@@ -4,10 +4,12 @@ import Rating from './Rating';
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
 import LikeButton from './LikeButton';
+import ContentLoader from 'react-content-loader'
 import { FormatRupiah } from "@arismun/format-rupiah";
 import Swal from 'sweetalert2';
 import Api from '../Api';
 function Wisatabykategori(){
+const [isSkleton, setIsSkleton] = useState(true);
 const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 8;
 const [users, setUser] = useState({})
@@ -44,6 +46,7 @@ const fetchwisataKategori = async (latitude, longitude) => {
     });
     setIsLoading(false)
     setwisataKategori(response.data);
+    setIsSkleton(false)
   } catch (error) {
     console.log(error);
     setIsLoading(false)
@@ -253,7 +256,64 @@ const renderPaginations = () => {
             }`}
             onClick={() => handleFilterChange('Untuk Lansia')}> Untuk lansia</button></li>
       </ul>
-          {renderDatadesktop()}
+      {isLoading? (
+        <>
+        <div className="col-lg-3 col-md-6 mb-3 mt-3">
+    <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
+        <ContentLoader
+      width="100%" // Set to 100% to make it responsive
+      height={400}
+      viewBox="0 0 100% 400"
+      backgroundColor="#f0f0f0"
+      foregroundColor="#dedede"
+    >
+      <rect x="0%" y="0%" rx="4" ry="4" width="100%" height="50%" />
+    </ContentLoader>
+    </div>
+    </div>
+    <div className="col-lg-3 col-md-6 mb-3 mt-3">
+    <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
+        <ContentLoader
+      width="100%" // Set to 100% to make it responsive
+      height={400}
+      viewBox="0 0 100% 400"
+      backgroundColor="#f0f0f0"
+      foregroundColor="#dedede"
+    >
+      <rect x="0%" y="0%" rx="4" ry="4" width="100%" height="50%" />
+    </ContentLoader>
+    </div>
+    </div>
+    <div className="col-lg-3 col-md-6 mb-3 mt-3">
+    <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
+        <ContentLoader
+      width="100%" // Set to 100% to make it responsive
+      height={400}
+      viewBox="0 0 100% 400"
+      backgroundColor="#f0f0f0"
+      foregroundColor="#dedede"
+    >
+      <rect x="0%" y="0%" rx="4" ry="4" width="100%" height="50%" />
+    </ContentLoader>
+    </div>
+    </div>
+    <div className="col-lg-3 col-md-6 mb-3 mt-3">
+    <div className="card shadow-0" style={{display:"flex",flexDirection:"column",height:"100%"}}>
+        <ContentLoader
+      width="100%" // Set to 100% to make it responsive
+      height={400}
+      viewBox="0 0 100% 400"
+      backgroundColor="#f0f0f0"
+      foregroundColor="#dedede"
+    >
+      <rect x="0%" y="0%" rx="4" ry="4" width="100%" height="50%" />
+    </ContentLoader>
+    </div>
+    </div>
+    </>
+      ) : (
+        renderDatadesktop()
+      )}  
         {renderPaginations()}
         </div>
       </div>

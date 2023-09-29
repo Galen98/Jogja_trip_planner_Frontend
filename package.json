@@ -29,6 +29,7 @@
     "react-accessible-accordion": "^5.0.0",
     "react-bootstrap": "^2.8.0",
     "react-bulma-dropdown": "^0.1.10",
+    "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
     "react-modal": "^3.16.1",
