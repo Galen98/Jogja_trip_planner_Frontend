@@ -20,19 +20,19 @@ return(
     <center>
     <div className="mt-5 row gx-4 justify-content-center">
       <div className="col-lg-3 col-md-12 mb-3 ">
-      <img src="https://wonderplan.ai/_app/immutable/assets/feature1-bc5722cf.webp" style={{width:"250px"}}/>
+      <img src="https://i.ibb.co/3fS4bxY/Screenshot-2023-10-02-at-01-06-03.png" style={{width:"200px"}}/>
       <h5 className="mt-4 font-weight-bold text-capitalize text-center font600 txtblack">Dapatkan perjalanan wisata</h5>
       <p className="mt-2 font-weight-bold text-center">Jadwal itinerary hari demi hari penuh <br/> berdasarkan preferensi Anda</p>
       </div>
 
       <div className="col-lg-3 col-md-12 mb-3 ">
-      <img src="https://wonderplan.ai/_app/immutable/assets/feature2-9348638d.webp" style={{width:"250px"}}/>
+      <img src="https://i.ibb.co/QFSbV4D/Screenshot-2023-10-02-at-01-06-15.png" style={{width:"200px"}}/>
       <h5 className="mt-4 font-weight-bold text-capitalize text-center font600 txtblack">Sesuaikan perjalanan anda</h5>
       <p className="mt-2 font-weight-bold text-center">Buat rencana wisata anda sendiri berdasarkan wisata favorite anda. <br/></p>
       </div>
 
       <div className="col-lg-3 col-md-12 mb-3 ">
-      <img src="https://wonderplan.ai/_app/immutable/assets/feature3-3bef7220.webp" style={{width:"250px"}}/>
+      <img src="https://i.ibb.co/WnQknmm/Screenshot-2023-10-02-at-01-06-29.png" style={{width:"200px"}}/>
       <h5 className="mt-4 font-weight-bold text-capitalize text-center font600 txtblack">Simpan perjalanan anda</h5>
       <p className="mt-2 font-weight-bold text-center">Simpan rencana perjalanan wisatamu. Akses sesuai keinginanmu</p>
       </div>
