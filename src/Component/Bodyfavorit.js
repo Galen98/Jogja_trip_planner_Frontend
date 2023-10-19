@@ -233,9 +233,7 @@ function Bodyfavorit(){
       </div>
     </Card>
     ))}
-   <center> 
-   <button onClick={handleShow}  className="btn btn-outline-primary custom-button rounded-9 mt-4 mb-4">Buat Rencana Perjalanan Wisata</button>
-   </center>
+
 
    <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -380,7 +378,12 @@ function Bodyfavorit(){
     {userlike.length !== 0 ? (
   <>
   <div className="col-md-6 text-center">
-          <h1 className='txtblack'>Rekomendasi Wisata</h1>
+  <h1 className='txtblack'>Buat Rencana Perjalanan Wisata</h1>
+          <p>Berdasarkan tempat wisata yang disukai</p>
+  <center> 
+   <button onClick={handleShow}  className="btn btn-primary custom-button rounded-9 mt-4 mb-4">Buat Rencana Perjalanan Wisata</button>
+   </center>
+          <h1 className='txtblack mt-5'>Rekomendasi Wisata</h1>
           <p>Berdasarkan tempat wisata yang disukai</p>
           <a href='/rekomendasi'><u>Lihat rekomendasi wisata</u></a>
     </div>

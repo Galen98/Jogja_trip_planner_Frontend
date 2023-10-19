@@ -15,7 +15,7 @@ function Headerfix(){
         <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Cara baru untuk merencanakan wisata anda di Jogja</h1>
         <p className="fs-3 text-white">Jelajahi berbagai objek wisata di Jogja melalui aplikasi website pariwisata kami. Temukan pemandangan yang menakjubkan, pantai yang indah, pegunungan yang megah, dan budaya.</p>
         <a href='/homeform' className='text-center'>
-        <Button variant="dark" className='rounded-9 btn-lg text-capitalize butonprimer' type='submit'>Buat rencana perjalanan</Button>
+        <Button variant="dark" className='rounded-9 btn-lg text-capitalize butonprimer' type='submit'><i className="fa fa-arrow-right" aria-hidden="true"></i> Buat rencana perjalanan</Button>
         </a>
       </div>
       </>
@@ -35,7 +35,7 @@ return(
         <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Cara baru untuk merencanakan wisata anda di Jogja</h1>
         <p className="fs-3 text-white">Jelajahi berbagai objek wisata di Jogja melalui aplikasi website pariwisata kami. Temukan pemandangan yang menakjubkan, pantai yang indah, pegunungan yang megah, dan budaya.</p>
         <a href='/login' className='text-center'>
-        <Button variant="dark" className='rounded-9 text-capitalize butonprimer btn-lg' type='submit'>Buat rencana perjalanan</Button>
+        <Button variant="dark" className='rounded-9 text-capitalize butonprimer btn-lg' type='submit'><i className="fa fa-arrow-right" aria-hidden="true"></i> Buat rencana perjalanan</Button>
         </a>
       </div>
           )}

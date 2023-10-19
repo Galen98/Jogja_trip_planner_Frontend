@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Dropdown } from 'react-bootstrap';
-import Navfix from './Navfix';
-import Footerfix from './Footerfix';
+
 const HomeForm = ({ handleNext }) => {
     const [selectedOption, setSelectedOption] = useState('');
     const token=localStorage.getItem("token")

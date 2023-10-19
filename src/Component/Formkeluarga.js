@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'; 
 import { Form, Dropdown, Button } from 'react-bootstrap';
 import Api from '../Api';
-import axios from 'axios';
+
 function Formkeluarga(){
     const[value, setValue]=useState(1)
     const history = useHistory()

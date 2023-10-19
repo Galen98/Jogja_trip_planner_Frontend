@@ -33,13 +33,36 @@ import Api from './Api';
 
 function App() {
   const [locationData, setLocationData] = useState(null);
-  const [token, setToken] = useState('');
+  const token = localStorage.getItem("token");
+
+  console.log("token:",token)
+  const clearAttractionLikedItems = () => {
+    for (const key in localStorage) {
+      if (localStorage.hasOwnProperty(key)) {
+        if (key.includes("attraction_")) {
+          localStorage.removeItem(key);
+        }
+      }
+    }
+  };
+
+  const deleteliked = async () =>{
+    try {
+      localStorage.removeItem('token');
+      localStorage.removeItem('userData');
+      localStorage.removeItem('cuaca');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  }
+ 
   const checkTokenValidity = async () => {
     try {
       const response = await Api.get('/api/check-token-validity');
       const { valid } = response.data;
       if (!valid) {
-        handleLogout();
+      deleteliked();
+      clearAttractionLikedItems()
       }
     } catch (error) {
       console.log(error)
@@ -47,18 +70,16 @@ function App() {
   };
 
   useEffect(() => {
-    const interval = setInterval(checkTokenValidity, 60000);
+    const interval = setInterval(() => {
+      checkTokenValidity().catch(err => {
+        console.log(err);
+      });
+    }, 60000);
+  
     return () => {
       clearInterval(interval);
     };
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userData')
-    setToken('');
-  };
- 
 
   return (    
     <div>
